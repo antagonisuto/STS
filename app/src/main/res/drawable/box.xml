@@ -1,74 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="253dp"
+    android:height="200dp"
+    android:viewportWidth="253"
+    android:viewportHeight="200"
+    >
 
-    <!-- Drop Shadow Stack -->
-    <item>
-        <shape>
-            <solid android:color="#EDF2F8" />
+    <group>
 
-            <corners android:radius="42dp" />
-        </shape>
-    </item>
-<!--    <item>
-        <shape>
-            <padding
-                android:bottom="1dp"
-                android:left="1dp"
-                android:right="1dp"
-                android:top="1dp" />
+        <clip-path
+            android:pathData="M24 0H229C242.255 0 253 10.7452 253 24V176C253 189.255 242.255 200 229 200H24C10.7452 200 0 189.255 0 176V24C0 10.7452 10.7452 0 24 0Z"
+            />
 
-            <solid android:color="#10CCCCCC" />
+        <group
+            android:translateX="0.52"
+            android:translateY="-0.701"
+            android:pivotX="126.5"
+            android:pivotY="100"
+            android:scaleX="2.695"
+            android:scaleY="3.47"
+            android:rotation="46.431"
+            >
 
-            <corners android:radius="42dp" />
-        </shape>
-    </item>
-    <item>
-        <shape>
-            <padding
-                android:bottom="1dp"
-                android:left="1dp"
-                android:right="1dp"
-                android:top="1dp" />
+            <path
+                android:pathData="M0 0V200H253V0"
+                >
 
-            <solid android:color="#20CCCCCC" />
+                <aapt:attr name="android:fillColor">
 
-            <corners android:radius="42dp" />
-        </shape>
-    </item>
-    <item>
-        <shape>
-            <padding
-                android:bottom="1dp"
-                android:left="1dp"
-                android:right="1dp"
-                android:top="1dp" />
+                    <gradient
+                        android:type="linear"
+                        android:startX="63.25"
+                        android:startY="100"
+                        android:endX="189.75"
+                        android:endY="100"
+                        >
 
-            <solid android:color="#30CCCCCC" />
+                        <item
+                            android:color="#EBF2F9"
+                            android:offset="0"
+                            />
 
-            <corners android:radius="42dp" />
-        </shape>
-    </item>
-    <item>
-        <shape>
-            <padding
-                android:bottom="1dp"
-                android:left="1dp"
-                android:right="1dp"
-                android:top="1dp" />
+                        <item
+                            android:color="#C6D7EB"
+                            android:offset="1"
+                            />
 
-            <solid android:color="#50CCCCCC" />
+                    </gradient>
 
-            <corners android:radius="42dp" />
-        </shape>
-    </item>-->
+                </aapt:attr>
 
-    <!-- Background -->
-    <item>
-        <shape android:shape="oval">
-            <solid android:color="88A5BF" />
+            </path>
 
-            <corners android:radius="1dp" />
-        </shape>
-    </item>
+        </group>
 
-</layer-list>
+    </group>
+
+</vector>

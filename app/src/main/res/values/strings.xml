@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">SoulToSoul</string>
+    <string name="mood">Привет!
+Как ты себя чувствуешь?</string>
+    <string name="reason">Оу нет!
+Что тебя делает злым?</string>
+    <string name="result">Вот некоторые вещи, которые могут тебе помочь!</string>
+    <string name="title">Меня не понимают</string>
+    <string name="content">Меня никто не понимает — это синдром забытого, недооцененного человека, который ожидает взаимности от остальных</string>
 </resources>
