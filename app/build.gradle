@@ -37,7 +37,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
-
+    implementation 'com.android.support:design:28.1.0'
     //Loader
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
     //Loader END

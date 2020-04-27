@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,7 +9,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -54,7 +55,7 @@
 
 
 
-                <TextView
+                <Button
                     android:layout_marginLeft="16dp"
                     android:layout_width="190dp"
                     android:layout_height="wrap_content"
@@ -66,18 +67,17 @@
                     android:text="Будь с нами!"
                     android:elevation="10dp"
                     android:textAllCaps="false"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/whiteColor"
                     android:textSize="20sp"
-                    android:textStyle="bold"
                     android:clickable="true"/>
 
 
                 <ImageView
                     android:layout_width="280dp"
-                    android:layout_height="350dp"
+                    android:layout_height="400dp"
                     android:layout_alignParentEnd="true"
                     android:layout_marginLeft="155.36dp"
-                    android:layout_marginTop="82dp"
+                    android:layout_marginTop="30dp"
                     android:layout_marginEnd="2dp"
                     android:background="@drawable/girl_feed" />
             </RelativeLayout>
@@ -118,13 +118,13 @@
                             android:textSize="20sp" />
 
                         <Button
+                            android:id="@+id/button1"
                             android:layout_width="match_parent"
                             android:layout_height="44dp"
                             android:layout_marginLeft="16dp"
                             android:layout_marginTop="250dp"
                             android:layout_marginRight="16dp"
                             android:background="@drawable/button_green"
-                            android:shadowRadius="78dp"
                             android:text="Перейти"
                             android:textAllCaps="false"
                             android:textColor="#ffffff"
@@ -158,6 +158,7 @@
                             android:layout_marginLeft="16dp"/>
 
                         <Button
+                            android:id="@+id/button2"
                             android:layout_width="match_parent"
                             android:layout_height="44dp"
                             android:text="Перейти"
@@ -165,7 +166,6 @@
                             android:textSize="16sp"
                             android:textAllCaps="false"
                             android:background="@drawable/button_green"
-                            android:shadowRadius="78dp"
                             android:layout_marginLeft="16dp"
                             android:layout_marginRight="16dp"
                             android:layout_marginTop="250dp"
@@ -237,13 +237,22 @@
                 android:layout_marginTop="10dp"
                 />
 
-            <View
-                android:layout_width="wrap_content"
+            <Button
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:clickable="true"
+                android:background="@drawable/button_style"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:padding="13dp"
+                android:layout_marginTop="16dp"
+                android:text="Будь с нами!"
+                android:textAllCaps="false"
+                android:textColor="@color/whiteColor"
+                android:textSize="20sp"
+                android:clickable="true"/>
 
-                android:background="@drawable/neo_button"
-                />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -319,6 +328,9 @@
                 android:layout_marginRight="16dp"
                 android:layout_marginTop="25dp"
                 android:textColor="#8031456A" />
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -367,7 +379,7 @@
                     />
 
             </LinearLayout>
-
+            </HorizontalScrollView>
 
             <TextView
                 android:layout_margin="16dp"
@@ -376,7 +388,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Больше рассказов"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/whiteColor"
                 android:textStyle="bold"
                 android:gravity="center"
                 android:textSize="20sp"
@@ -386,5 +398,16 @@
         </LinearLayout>
     </ScrollView>
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:menu="@menu/bottom_navigation_menu"
+        app:itemIconSize="28dp"
+        app:itemIconTint="@drawable/bottom_navigation_colors"
+        app:itemTextColor="@drawable/bottom_navigation_colors"
+        android:background="#EBF3FA"
+        />
 
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
