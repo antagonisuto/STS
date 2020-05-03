@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 
 import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.soultosoul.Entities.Blog;
@@ -22,6 +23,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_feed);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation_view);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
+        goToPage();
         final TextView textView = findViewById(R.id.test);
         NetworkService.getInstance()
                 .getJSONApi()
@@ -55,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
+        //final TextView card = findViewById(R.id.test);
         NetworkService.getInstance()
                 .getJSONApi().getAllBlogs().enqueue(new Callback<List<Blog>> (){
 
@@ -77,8 +81,28 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public void goToPage() {
+        CardView cityCard = (CardView)findViewById(R.id.cardViewKids);
+        cityCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), MoodActivity.class);
+                v.getContext().startActivity(intent);
+                overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out);
+            }
+        });
 
+        Button btnReadMoreBlog = (Button) findViewById(R.id.readMoreBlog);
+        btnReadMoreBlog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), ReadActivity.class);
+                v.getContext().startActivity(intent);
+                overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out);
+            }
+        });
 
+    }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -88,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.ic_home:
                     break;
                 case R.id.ic_person:
-                    Intent b = new Intent(MainActivity.this,ProfileActivity.class);
+                    Intent b = new Intent(MainActivity.this, ProfileActivity.class);
                     startActivity(b);
                     overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out);
                     break;

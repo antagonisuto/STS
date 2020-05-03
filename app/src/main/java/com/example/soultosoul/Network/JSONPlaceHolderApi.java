@@ -15,17 +15,6 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface JSONPlaceHolderApi {
-//    @GET("/posts/{id}")
-//    public Call<Post> getPostWithID(@Path("id") int id);
-//
-//    @GET("/posts")
-//    public Call<List<Post>> getAllPosts();
-//
-//    @GET("/posts")
-//    public Call<List<Post>> getPostOfUser(@Query("userId") int id);
-//
-//    @POST("/posts")
-//    public Call<Post> postData(@Body Post data);
 
     /**UNAUTHORIZED**/
     @POST("api/v1/unauthorized/user")
@@ -42,8 +31,5 @@ public interface JSONPlaceHolderApi {
 
     @GET("api/v1/unauthorized/blog/{id}")
     public Call<Blog> getBlogWithID(@Path("id") int id);
-
-
-
 
 }
