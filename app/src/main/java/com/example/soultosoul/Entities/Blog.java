@@ -3,6 +3,8 @@ package com.example.soultosoul.Entities;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 //Sts_blog(id, title, content, user_id)
 public class Blog {
 
@@ -21,6 +23,7 @@ public class Blog {
     @SerializedName("user_id")
     @Expose
     private long user_id;
+
 
     public Blog(String title,  String content, long user_id) {
         this.id = id;
@@ -60,4 +63,6 @@ public class Blog {
     public void setUser_id( long user_id) {
         this.user_id = user_id;
     }
+
+
 }

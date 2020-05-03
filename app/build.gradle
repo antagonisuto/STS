@@ -41,14 +41,9 @@ dependencies {
     //Loader
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
     //Loader END
-    implementation 'com.google.firebase:firebase-analytics:17.2.0'
-    implementation 'com.google.firebase:firebase-auth:17.0.0'
-    implementation 'com.google.firebase:firebase-core:17.0.0'
     implementation 'com.r0adkll:slidableactivity:2.0.6'
 
-
-    implementation 'com.squareup.picasso:picasso:2.5.2'
-    implementation 'com.google.android.gms:play-services-maps:16.0.0'
-    implementation 'com.google.android.gms:play-services-auth:17.0.0'
-
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
 }

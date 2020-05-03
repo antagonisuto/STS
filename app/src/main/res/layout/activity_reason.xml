@@ -156,7 +156,7 @@
             android:padding="10dp"
             android:text="Выбрать"
             android:textAllCaps="false"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/whiteColor"
             android:textSize="20sp"
             android:textStyle="bold" />
     </LinearLayout>

@@ -1,4 +1,4 @@
-package com.example.soultosoul;
+package com.example.soultosoul.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,8 +6,8 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.soultosoul.R;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.firebase.auth.FirebaseAuth;
 import com.r0adkll.slidr.Slidr;
 
 public class ProfileActivity extends AppCompatActivity {
