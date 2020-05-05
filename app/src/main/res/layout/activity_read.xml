@@ -11,6 +11,7 @@ android:background="#EBF3FA">
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <TextView
+            android:id="@+id/titleRead"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Меня не понимают"
@@ -30,6 +31,7 @@ android:background="#EBF3FA">
             android:layout_gravity="center"/>
 
         <TextView
+            android:id="@+id/mainRead"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/read"
@@ -104,6 +106,7 @@ android:background="#EBF3FA">
                 android:textColor="#BDBDBD" />
 
             <TextView
+                android:id="@+id/authorRead"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/author"
@@ -132,86 +135,11 @@ android:background="#EBF3FA">
             android:textSize="18sp"
             />
 
-        <RelativeLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listRec"
+        app:layoutManager="LinearLayoutManager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp">
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="В связи болезнью"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimary"
-            />
-
-        <TextView
-            android:id="@+id/text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/title"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="10dp"
-            android:layout_toStartOf="@+id/news"
-            android:text="Все больше выходят новости о китайском коронавирусе ..."
-            android:textColor="@color/colorPrimary"
-            android:textSize="16sp" />
-
-        <ImageView
-            android:id="@+id/news"
-            android:layout_width="74dp"
-            android:layout_height="74dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="0dp"
-            android:background="@drawable/news" />
-
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp">
-
-        <TextView
-            android:id="@+id/title1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="В связи болезнью"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimary"
-            />
-
-        <TextView
-            android:id="@+id/text1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/title1"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="10dp"
-            android:layout_toStartOf="@+id/news1"
-            android:text="Все больше выходят новости о китайском коронавирусе ..."
-            android:textColor="@color/colorPrimary"
-            android:textSize="16sp" />
-
-        <ImageView
-            android:id="@+id/news1"
-            android:layout_width="74dp"
-            android:layout_height="74dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="0dp"
-            android:background="@drawable/news" />
-
-    </RelativeLayout>
+        android:layout_height="match_parent" />
 
     </LinearLayout>
 </ScrollView>

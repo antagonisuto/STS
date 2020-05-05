@@ -261,17 +261,6 @@
 
             </HorizontalScrollView>
 
-            //POKA TUT
-            <TextView
-                android:id="@+id/test"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hello World!"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
             //решай проблемы
             <TextView
                 android:layout_width="match_parent"
@@ -360,11 +349,11 @@
             //меня не понимают
             <HorizontalScrollView
                 android:layout_width="match_parent"
-                android:layout_height="200dp">
+                android:layout_height="210dp">
 <!--                <include layout="@layout/feed_card_other_blogs" />-->
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="200dp">
+                    android:layout_height="210dp">
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/feed_card_other_blog1"
@@ -380,7 +369,7 @@
                             android:id="@+id/cardViewOtherBlogText1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Меня не понимают"
+                            android:text="1"
                             android:layout_margin="16dp"
                             android:textSize="30sp"
                             android:textStyle="bold"
@@ -403,8 +392,7 @@
                             android:id="@+id/cardViewOtherBlogText2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Унижают из-за внешности.
-Что со мной не так?!"
+                            android:text="2"
                             android:layout_margin="16dp"
                             android:textSize="30sp"
                             android:textStyle="bold"
@@ -427,8 +415,7 @@
                         android:id="@+id/cardViewOtherBlogText3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Унижают из-за внешности.
-Что со мной не так?!"
+                        android:text="3"
                         android:layout_margin="16dp"
                         android:textSize="30sp"
                         android:textStyle="bold"

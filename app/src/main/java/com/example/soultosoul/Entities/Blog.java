@@ -3,10 +3,11 @@ package com.example.soultosoul.Entities;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
 //Sts_blog(id, title, content, user_id)
-public class Blog {
+public class Blog implements Serializable {
 
     @SerializedName("id")
     @Expose
