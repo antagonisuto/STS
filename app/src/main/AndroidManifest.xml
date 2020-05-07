@@ -18,5 +18,7 @@
         <activity android:name=".Activity.ProfileActivity" />
         <activity android:name=".Activity.MoodActivity" />
         <activity android:name=".Activity.ReadActivity" />
+        <activity android:name=".Activity.KidResultActivity" />
+        <activity android:name=".Activity.ReasonActivity" />
     </application>
 </manifest>

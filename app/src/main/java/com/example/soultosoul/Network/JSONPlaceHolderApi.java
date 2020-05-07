@@ -32,4 +32,8 @@ public interface JSONPlaceHolderApi {
     @GET("api/v1/unauthorized/blog/{id}")
     public Call<Blog> getBlogWithID(@Path("id") int id);
 
+    //kids - 1, teenagers - 2, young people - 3, adults - 4
+    @GET("api/v1/unauthorized/articles/category/{categoryId}/mood/{moodId}/problem/{problemId}")
+    public Call<List<Article>> getArticlesByCatMoodProb(@Path("categoryId") int categoryId, @Path("moodId") int moodId, @Path("problemId") int problemId);
+
 }

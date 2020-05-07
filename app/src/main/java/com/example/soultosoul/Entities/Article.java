@@ -3,8 +3,10 @@ package com.example.soultosoul.Entities;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 //Sts_article(id, title, content, category_id, mood_id, problem_id, user_id)
-public class Article {
+public class Article implements Serializable {
 
     @SerializedName("id")
     @Expose
