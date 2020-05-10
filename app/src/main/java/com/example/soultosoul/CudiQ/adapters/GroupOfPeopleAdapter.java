@@ -21,7 +21,6 @@ import java.util.List;
  */
 public class GroupOfPeopleAdapter extends RecyclerView.Adapter<GroupOfPeopleAdapter.ViewHolder> {
     private Context mContext;
-
     private List<String> mDataList;
     private ClickListener clickListener;
 

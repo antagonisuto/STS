@@ -32,7 +32,6 @@ public class MainPageFragment extends Fragment implements GroupOfPeopleAdapter.C
     RecyclerView recyclerOfStory;
     @BindView(R.id.recyclerOfTag)
     RecyclerView recyclerOfTag;
-
     private GroupOfPeopleAdapter adapterForKids;
     private List<String> arrDataAboutGroup = new ArrayList<>();
 

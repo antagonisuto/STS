@@ -29,7 +29,7 @@ public class MessageFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        viewModel = new ViewModelProvider(this).get(MainViewModel.class);
+        viewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
         textView = view.findViewById(R.id.someMessage);
         viewModel.getAllBlogData().observe(requireActivity(), blogs -> {
             if (blogs != null) {
