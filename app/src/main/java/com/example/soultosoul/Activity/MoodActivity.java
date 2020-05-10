@@ -24,7 +24,7 @@ public class MoodActivity extends AppCompatActivity {
     }
 
     private void chooseMoods() {
-        final ImageButton imageButton = (ImageButton) findViewById(R.id.mood_card1);
+        final ImageButton imageButton = (ImageButton) findViewById(R.id.mood_angry);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,7 +36,7 @@ public class MoodActivity extends AppCompatActivity {
             }
         });
 
-        final ImageButton imageButton2 = (ImageButton) findViewById(R.id.mood_card2);
+        final ImageButton imageButton2 = (ImageButton) findViewById(R.id.mood_curios);
         imageButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,7 +48,7 @@ public class MoodActivity extends AppCompatActivity {
             }
         });
 
-        final ImageButton imageButton3 = (ImageButton) findViewById(R.id.mood_card3);
+        final ImageButton imageButton3 = (ImageButton) findViewById(R.id.mood_shame);
         imageButton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,6 +56,30 @@ public class MoodActivity extends AppCompatActivity {
 
                 if (imageButton3.isSelected()) {
                     mood = 3;
+                }
+            }
+        });
+
+        final ImageButton imageButton4 = (ImageButton) findViewById(R.id.mood_not_sure);
+        imageButton4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageButton4.setSelected(!imageButton4.isSelected());
+
+                if (imageButton4.isSelected()) {
+                    mood = 4;
+                }
+            }
+        });
+
+        final ImageButton imageButton5 = (ImageButton) findViewById(R.id.mood_sad);
+        imageButton4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageButton5.setSelected(!imageButton5.isSelected());
+
+                if (imageButton5.isSelected()) {
+                    mood = 5;
                 }
             }
         });

@@ -36,4 +36,9 @@ public interface JSONPlaceHolderApi {
     @GET("api/v1/unauthorized/articles/category/{categoryId}/mood/{moodId}/problem/{problemId}")
     public Call<List<Article>> getArticlesByCatMoodProb(@Path("categoryId") int categoryId, @Path("moodId") int moodId, @Path("problemId") int problemId);
 
+    @GET("api/v1/unauthorized/articles/category/{categoryId}/problem/{problemId}")
+    public Call<List<Article>> getArticlesByCatProb(@Path("categoryId") int categoryId, @Path("problemId") int problemId);
+
+    @GET("api/v1/unauthorized/articles/category/{categoryId}")
+    public Call<List<Article>> getArticlesByCat(@Path("categoryId") int categoryId);
 }

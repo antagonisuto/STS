@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.soultosoul.Adapter.ArticleAdapter;
-import com.example.soultosoul.Adapter.BlogAdapter;
 import com.example.soultosoul.Entities.Article;
 import com.example.soultosoul.Entities.Blog;
 import com.example.soultosoul.Network.NetworkService;
@@ -19,32 +18,27 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class KidResultActivity extends AppCompatActivity {
+public class AdultActivity extends AppCompatActivity {
     List<Article> articles = new ArrayList<>();
-    int mood = 0;
-    int reason = 0;
-    int kid = 1;
-
-    @Override
+    int adult_type = 0;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_result);
+        setContentView(R.layout.activity_adult);
         Bundle arguments = getIntent().getExtras();
-        mood = (int) arguments.getSerializable("mood");
-        reason = (int) arguments.getSerializable("reason");
+
+        adult_type = (int) arguments.getSerializable("adult_type");
 
         NetworkService.getInstance()
-                .getJSONApi().getArticlesByCatMoodProb(kid, mood, reason).enqueue(new Callback<List<Article>>(){
+                .getJSONApi().getArticlesByCat(adult_type).enqueue(new Callback<List<Article>>(){
             @Override
             public void onResponse(Call<List<Article>> call, Response<List<Article>> response) {
                 articles = response.body();
                 for (Article m:articles){
                     System.out.println(m.getTitle());
                 }
-                System.out.println(mood+" "+reason);
+                System.out.println(adult_type+" Adult Activity ");
                 recView(articles);
             }
-
 
             @Override
             public void onFailure(Call<List<Article>> call, Throwable t) {
@@ -53,15 +47,14 @@ public class KidResultActivity extends AppCompatActivity {
             }
         });
 
-
-
+        recView(articles);
     }
 
     private void recView(List<Article> art) {
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.listKidRec);
-        // create adapter
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.listRec);
+        // создаем адаптер
         ArticleAdapter adapter = new ArticleAdapter(this, art);
-        // setting the adapter for the list
+        // устанавливаем для списка адаптер
         recyclerView.setAdapter(adapter);
     }
 }

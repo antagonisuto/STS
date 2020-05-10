@@ -17,21 +17,35 @@ public class Blog implements Serializable {
     @Expose
     private String title;
 
+    @SerializedName("shortContent")
+    @Expose
+    private String shortContent;
+
     @SerializedName("content")
     @Expose
     private String content;
 
-    @SerializedName("user_id")
+    @SerializedName("status")
     @Expose
-    private long user_id;
+    private String status;
 
+//    @SerializedName("user")
+//    @Expose
+//    private Users user;
 
-    public Blog(String title,  String content, long user_id) {
+    public Blog(String title,  String content) {
         this.id = id;
         this.title = title;
         this.content = content;
-        this.user_id = user_id;
+        //this.user = user;
     }
+
+//    public Blog(String title,  String content, Users user) {
+//        this.id = id;
+//        this.title = title;
+//        this.content = content;
+//        //this.user = user;
+//    }
 
     public long getId() {
         return this.id;
@@ -57,13 +71,19 @@ public class Blog implements Serializable {
         this.content = content;
     }
 
-    public long getUser_id() {
-        return this.user_id;
+//    public Users getUser() {
+//        return user;
+//    }
+//
+//    public void setUser(Users user) {
+//        this.user = user;
+//    }
+
+    public String getShortContent() {
+        return shortContent;
     }
 
-    public void setUser_id( long user_id) {
-        this.user_id = user_id;
+    public void setShortContent(String shortContent) {
+        this.shortContent = shortContent;
     }
-
-
 }

@@ -60,35 +60,54 @@
             //2 ne znau
 
             <ImageButton
-                android:id="@+id/mood_card1"
+                android:id="@+id/mood_angry"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="70dp"
                 android:layout_marginLeft="16dp"
-                android:background="@drawable/mood_selector"
+                android:background="@drawable/mood_angry_selector"
                 android:innerRadius="0dp" />
 
             <ImageButton
-                android:id="@+id/mood_card2"
+                android:id="@+id/mood_curios"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="55dp"
                 android:layout_marginLeft="16dp"
-                android:background="@drawable/img2"
+                android:background="@drawable/mood_curios_selector"
                 android:innerRadius="0dp"/>
 
             <ImageButton
-                android:id="@+id/mood_card3"
+                android:id="@+id/mood_shame"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="55dp"
                 android:layout_marginLeft="16dp"
-                android:background="@drawable/img3"
+                android:background="@drawable/mood_shame_selector"
                 android:innerRadius="0dp"/>
 
+            <ImageButton
+                android:id="@+id/mood_not_sure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="55dp"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/mood_notsure_selector"
+                android:innerRadius="0dp"/>
+
+            <ImageButton
+                android:id="@+id/mood_sad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="55dp"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/mood_sad_selector"
+                android:innerRadius="0dp"/>
 
 
         </LinearLayout>

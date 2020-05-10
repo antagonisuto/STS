@@ -1,6 +1,7 @@
 package com.example.soultosoul.Activity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation_view);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         goToPage();
+        goToAdultPage();
 
         //final TextView card = findViewById(R.id.test);
         final TextView cardViewOtherBlogText1 = findViewById(R.id.cardViewOtherBlogText1);
@@ -63,6 +65,42 @@ public class MainActivity extends AppCompatActivity {
             public void onFailure(Call<List<Blog>> call, Throwable t) {
                 System.out.println("Error occurred while getting request! #12");
                 t.printStackTrace();
+            }
+        });
+    }
+
+    //kids - 1, teenagers - 2, young people - 3, adults - 4
+    private void goToAdultPage() {
+        CardView cityCard2 = (CardView)findViewById(R.id.cardViewTeen);
+        cityCard2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), AdultActivity.class);
+                intent.putExtra("adult_type", 2);
+                v.getContext().startActivity(intent);
+                overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out);
+            }
+        });
+
+        CardView cityCard3 = (CardView)findViewById(R.id.cardViewAdults);
+        cityCard3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), AdultActivity.class);
+                intent.putExtra("adult_type", 3);
+                v.getContext().startActivity(intent);
+                overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out);
+            }
+        });
+
+        CardView cityCard4 = (CardView)findViewById(R.id.cardViewElders);
+        cityCard4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), AdultActivity.class);
+                intent.putExtra("adult_type", 4);
+                v.getContext().startActivity(intent);
+                overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
     }
@@ -140,6 +178,9 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(b);
                     overridePendingTransition( android.R.anim.fade_in, android.R.anim.fade_out);
                     break;
+                case R.id.ic_call:
+                    Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "+77056864017"));
+                    startActivity(intent);
             }
             return false;
         }

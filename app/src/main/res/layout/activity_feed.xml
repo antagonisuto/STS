@@ -8,6 +8,7 @@
     android:orientation="vertical">
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="70dp">
@@ -28,16 +29,16 @@
                 android:background="@drawable/logo"
                 android:innerRadius="0dp" />
             //Главная
+
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
+                android:layout_height="wrap_content">
 
                 <TextView
-                    android:layout_marginLeft="16dp"
                     android:id="@+id/Main_text"
                     android:layout_width="209dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
                     android:layout_marginTop="121dp"
                     android:text="Надстройка нетривиальна"
                     android:textColor="@color/colorPrimary"
@@ -45,31 +46,30 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:layout_marginLeft="16dp"
                     android:layout_width="163dp"
                     android:layout_height="87dp"
+                    android:layout_marginLeft="16dp"
                     android:layout_marginTop="190dp"
                     android:text="Смысл жизни, следовательно, творит данный внешный мир"
                     android:textColor="@color/colorPrimary"
                     android:textSize="16sp" />
 
 
-
                 <Button
-                    android:layout_marginLeft="16dp"
                     android:layout_width="190dp"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/button_style"
                     android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="280dp"
+                    android:background="@drawable/button_style"
+                    android:clickable="true"
+                    android:elevation="10dp"
                     android:gravity="center"
                     android:padding="13dp"
-                    android:layout_marginTop="280dp"
                     android:text="Будь с нами!"
-                    android:elevation="10dp"
                     android:textAllCaps="false"
                     android:textColor="@color/whiteColor"
-                    android:textSize="20sp"
-                    android:clickable="true"/>
+                    android:textSize="20sp" />
 
 
                 <ImageView
@@ -78,11 +78,12 @@
                     android:layout_alignParentEnd="true"
                     android:layout_marginLeft="155.36dp"
                     android:layout_marginTop="30dp"
-                    android:layout_marginEnd="2dp"
+                    android:layout_marginEnd="3dp"
                     android:background="@drawable/girl_feed" />
             </RelativeLayout>
 
             //прокрутка, возрастная категория
+
             <HorizontalScrollView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -94,19 +95,19 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/cardViewKids"
                         android:layout_width="253dp"
-                        android:layout_height="308dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp"
                         android:elevation="20dp"
-                        app:cardCornerRadius="10dp"
-                        app:background="@drawable/category_box">
+                        app:background="@drawable/category_box"
+                        app:cardCornerRadius="10dp">
 
                         <ImageView
                             android:layout_width="221dp"
                             android:layout_height="186dp"
                             android:layout_gravity="center"
-                            android:layout_marginTop="-44dp"
+                            android:layout_marginTop="-16dp"
                             android:background="@drawable/dety"
                             android:scaleType="centerCrop" />
 
@@ -114,147 +115,99 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="16dp"
+                            android:layout_marginBottom="16dp"
                             android:layout_marginTop="216dp"
                             android:text="Дети: 3 - 10 лет"
                             android:textSize="20sp" />
 
-                        <Button
-                            android:layout_width="match_parent"
-                            android:layout_height="44dp"
-                            android:layout_marginLeft="16dp"
-                            android:layout_marginTop="250dp"
-                            android:layout_marginRight="16dp"
-                            android:background="@drawable/button_green"
-                            android:text="Перейти"
-                            android:textAllCaps="false"
-                            android:textColor="#ffffff"
-                            android:textSize="16sp"
-                            />
                     </androidx.cardview.widget.CardView>
+
                     <androidx.cardview.widget.CardView
                         android:id="@+id/cardViewTeen"
-                    android:layout_width="253dp"
-                    android:layout_height="308dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:elevation="20dp"
-                    app:cardCornerRadius="10dp"
-                    app:background="@drawable/category_box">
-
-                    <ImageView
-                        android:layout_width="221dp"
-                        android:layout_height="186dp"
-                        android:background="@drawable/dety"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="-44dp"
-                        android:scaleType="centerCrop" />
-
-                    <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="253dp"
                         android:layout_height="wrap_content"
-                        android:text="Подростки: 11 - 17 лет"
-                        android:layout_marginTop="216dp"
-                        android:textSize="20sp"
-                        android:layout_marginLeft="16dp"/>
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:elevation="20dp"
+                        app:background="@drawable/category_box"
+                        app:cardCornerRadius="10dp">
 
-                    <Button
-                        android:id="@+id/button2"
-                        android:layout_width="match_parent"
-                        android:layout_height="44dp"
-                        android:text="Перейти"
-                        android:textColor="#ffffff"
-                        android:textSize="16sp"
-                        android:textAllCaps="false"
-                        android:background="@drawable/button_green"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginRight="16dp"
-                        android:layout_marginTop="250dp"
+                        <ImageView
+                            android:layout_width="221dp"
+                            android:layout_height="186dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="-16dp"
+                            android:background="@drawable/dety"
+                            android:scaleType="centerCrop" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="216dp"
+                            android:layout_marginBottom="16dp"
+                            android:text="Подростки: 11 - 17 лет"
+                            android:textSize="20sp" />
 
 
-                        />
-                </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>
+
                     <androidx.cardview.widget.CardView
                         android:id="@+id/cardViewAdults"
                         android:layout_width="253dp"
-                        android:layout_height="308dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp"
                         android:elevation="20dp"
-                        app:cardCornerRadius="10dp"
-                        app:background="@drawable/category_box">
+                        app:background="@drawable/category_box"
+                        app:cardCornerRadius="10dp">
 
                         <ImageView
                             android:layout_width="221dp"
                             android:layout_height="186dp"
-                            android:background="@drawable/dety"
                             android:layout_gravity="center"
-                            android:layout_marginTop="-44dp"
+                            android:layout_marginTop="-16dp"
+                            android:background="@drawable/dety"
                             android:scaleType="centerCrop" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Молодые люди: 18 - 29 лет"
-                            android:layout_marginTop="216dp"
-                            android:textSize="20sp"
-                            android:layout_marginLeft="16dp"/>
-
-                        <Button
-                            android:id="@+id/button3"
-                            android:layout_width="match_parent"
-                            android:layout_height="44dp"
-                            android:text="Перейти"
-                            android:textColor="#ffffff"
-                            android:textSize="16sp"
-                            android:textAllCaps="false"
-                            android:background="@drawable/button_green"
                             android:layout_marginLeft="16dp"
-                            android:layout_marginRight="16dp"
-                            android:layout_marginTop="250dp"
+                            android:layout_marginTop="216dp"
+                            android:layout_marginBottom="16dp"
+                            android:text="Молодые: 18 - 29 лет"
+                            android:textSize="20sp" />
 
-
-                            />
                     </androidx.cardview.widget.CardView>
+
                     <androidx.cardview.widget.CardView
                         android:id="@+id/cardViewElders"
                         android:layout_width="253dp"
-                        android:layout_height="308dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp"
                         android:elevation="20dp"
-                        app:cardCornerRadius="10dp"
-                        app:background="@drawable/category_box">
+                        app:background="@drawable/category_box"
+                        app:cardCornerRadius="10dp">
 
                         <ImageView
                             android:layout_width="221dp"
                             android:layout_height="186dp"
-                            android:background="@drawable/dety"
                             android:layout_gravity="center"
-                            android:layout_marginTop="-44dp"
+                            android:layout_marginTop="-16dp"
+                            android:background="@drawable/dety"
                             android:scaleType="centerCrop" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Взрослые: 30+ лет"
-                            android:layout_marginTop="216dp"
-                            android:textSize="20sp"
-                            android:layout_marginLeft="16dp"/>
-
-                        <Button
-                            android:layout_width="match_parent"
-                            android:layout_height="44dp"
-                            android:text="Перейти"
-                            android:textColor="#ffffff"
-                            android:textSize="16sp"
-                            android:textAllCaps="false"
-                            android:background="@drawable/button_green"
                             android:layout_marginLeft="16dp"
-                            android:layout_marginRight="16dp"
-                            android:layout_marginTop="250dp"
+                            android:layout_marginTop="216dp"
+                            android:layout_marginBottom="16dp"
+                            android:text="Взрослые: 30+ лет"
+                            android:textSize="20sp" />
 
-
-                            />
                     </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
@@ -262,53 +215,51 @@
             </HorizontalScrollView>
 
             //решай проблемы
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="42dp"
                 android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
                 android:layout_marginTop="30dp"
+                android:layout_marginRight="16dp"
                 android:text="Решай проблемы"
-                android:textSize="30dp"
                 android:textColor="@color/colorPrimary"
-                android:textStyle="bold"
-                />
+                android:textSize="30dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:text="Если у тебя есть проблемы, мы тебе поможем. Даже если ты думаешь что это малейшие и не стоющие внимания ситуации. "
                 android:textColor="@color/colorPrimary"
-                />
+                android:textSize="16sp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
-                android:background="@drawable/pic1"/>
+                android:layout_marginTop="20dp"
+                android:background="@drawable/pic1" />
 
             <TextView
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="В связи болезнью"
-                android:textSize="20sp"
-                android:textColor="@color/colorPrimary"
-                android:textStyle="bold"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
+                android:text="В связи болезнью"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                android:textStyle="bold"
 
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
                 android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="16dp"
                 android:text="Все больше выходят новости о китайском коронавирусе, которые делает каждый день тревожнее.
 
@@ -317,40 +268,40 @@
 Избегать общественные места и стараться питаться из дома.
 "
                 android:textColor="@color/colorPrimary"
-                android:layout_marginTop="10dp"
-                />
+                android:textSize="16sp" />
 
             <Button
                 android:id="@+id/readMoreBlog"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/button_style"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/button_style"
+                android:clickable="true"
                 android:gravity="center"
                 android:padding="13dp"
-                android:layout_marginTop="16dp"
                 android:text="Прочитать больше"
                 android:textAllCaps="false"
                 android:textColor="@color/whiteColor"
-                android:textSize="20sp"
-                android:clickable="true"/>
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Остальные рассказы"
-                android:textSize="16sp"
                 android:layout_margin="16dp"
                 android:layout_marginTop="16dp"
-                android:textColor="#8031456A" />
+                android:text="Остальные рассказы"
+                android:textColor="#8031456A"
+                android:textSize="16sp" />
 
             //меня не понимают
+
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="210dp">
-<!--                <include layout="@layout/feed_card_other_blogs" />-->
+                <!--                <include layout="@layout/feed_card_other_blogs" />-->
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="210dp">
@@ -359,151 +310,153 @@
                         android:id="@+id/feed_card_other_blog1"
                         android:layout_width="253dp"
                         android:layout_height="200dp"
+                        android:layout_marginLeft="16dp"
                         android:layout_marginRight="10dp"
                         android:elevation="20dp"
-                        android:layout_marginLeft="16dp"
-                        app:cardCornerRadius="10dp"
-                        app:background="@drawable/category_box">
+                        app:background="@drawable/category_box"
+                        app:cardCornerRadius="10dp">
 
                         <TextView
                             android:id="@+id/cardViewOtherBlogText1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="1"
                             android:layout_margin="16dp"
-                            android:textSize="30sp"
-                            android:textStyle="bold"
                             android:layout_marginLeft="16dp"
+                            android:clickable="true"
+                            android:text="1"
                             android:textColor="@color/colorPrimary"
-                            android:clickable="true"/>
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
 
 
                     </androidx.cardview.widget.CardView>
+
                     <androidx.cardview.widget.CardView
                         android:id="@+id/feed_card_other_blog2"
                         android:layout_width="253dp"
                         android:layout_height="200dp"
                         android:layout_marginRight="10dp"
                         android:elevation="20dp"
-                        app:cardCornerRadius="10dp"
-                        app:background="@drawable/category_box">
+                        app:background="@drawable/category_box"
+                        app:cardCornerRadius="10dp">
 
                         <TextView
                             android:id="@+id/cardViewOtherBlogText2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="2"
                             android:layout_margin="16dp"
-                            android:textSize="30sp"
-                            android:textStyle="bold"
                             android:layout_marginLeft="16dp"
+                            android:clickable="true"
+                            android:text="2"
                             android:textColor="@color/colorPrimary"
-                            android:clickable="true"/>
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
 
 
                     </androidx.cardview.widget.CardView>
+
                     <androidx.cardview.widget.CardView
-                    android:id="@+id/feed_card_other_blog3"
-                    android:layout_width="253dp"
-                    android:layout_height="200dp"
-                    android:layout_marginRight="10dp"
-                    android:elevation="20dp"
-                    app:cardCornerRadius="10dp"
-                    app:background="@drawable/category_box">
+                        android:id="@+id/feed_card_other_blog3"
+                        android:layout_width="253dp"
+                        android:layout_height="200dp"
+                        android:layout_marginRight="10dp"
+                        android:elevation="20dp"
+                        app:background="@drawable/category_box"
+                        app:cardCornerRadius="10dp">
 
-                    <TextView
-                        android:id="@+id/cardViewOtherBlogText3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="3"
-                        android:layout_margin="16dp"
-                        android:textSize="30sp"
-                        android:textStyle="bold"
-                        android:layout_marginLeft="16dp"
-                        android:textColor="@color/colorPrimary"
-                        android:clickable="true"/>
+                        <TextView
+                            android:id="@+id/cardViewOtherBlogText3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            android:layout_marginLeft="16dp"
+                            android:clickable="true"
+                            android:text="3"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
 
 
-                </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>
                 </LinearLayout>
             </HorizontalScrollView>
 
             //больше по тегам
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Больше по тегам"
-                android:textSize="16sp"
                 android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
                 android:layout_marginTop="25dp"
-                android:textColor="#8031456A" />
+                android:layout_marginRight="16dp"
+                android:text="Больше по тегам"
+                android:textColor="#8031456A"
+                android:textSize="16sp" />
+
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="100dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                >
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Печаль и депрессия"
-                    android:background="@drawable/tag_style"
-                    android:padding="15dp"
-                    android:layout_marginRight="10dp"
-                    android:textSize="16dp"
-                    android:textColor="@color/colorAccent"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Апендикс"
-                    android:background="@drawable/tag_style"
-                    android:padding="15dp"
-                    android:layout_marginRight="10dp"
-                    android:textSize="16dp"
-                    android:textColor="@color/colorAccent"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Самоповреждение"
-                    android:background="@drawable/tag_style"
-                    android:padding="15dp"
-                    android:layout_marginRight="10dp"
-                    android:textSize="16dp"
-                    android:textColor="@color/colorAccent"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Тема"
-                    android:background="@drawable/tag_style"
-                    android:padding="15dp"
-                    android:layout_marginRight="10dp"
-                    android:textSize="16dp"
-                    android:textColor="@color/colorAccent"
-                    />
+                    android:layout_margin="16dp">
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/tag_style"
+                        android:padding="15dp"
+                        android:text="Печаль и депрессия"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/tag_style"
+                        android:padding="15dp"
+                        android:text="Апендикс"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/tag_style"
+                        android:padding="15dp"
+                        android:text="Самоповреждение"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/tag_style"
+                        android:padding="15dp"
+                        android:text="Тема"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="16dp" />
+
+                </LinearLayout>
             </HorizontalScrollView>
 
             <TextView
-                android:layout_margin="16dp"
-                android:padding="13dp"
-                android:background="@drawable/button_style"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/button_style"
+                android:elevation="24dp"
+                android:gravity="center"
+                android:padding="13dp"
                 android:text="Больше рассказов"
                 android:textColor="@color/whiteColor"
-                android:textStyle="bold"
-                android:gravity="center"
                 android:textSize="20sp"
-                android:elevation="24dp"
-                />
+                android:textStyle="bold" />
 
         </LinearLayout>
     </ScrollView>

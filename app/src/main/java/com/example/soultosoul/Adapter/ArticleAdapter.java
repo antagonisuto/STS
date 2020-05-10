@@ -33,7 +33,6 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ViewHold
     }
     @Override
     public ArticleAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
         view = inflater.inflate(R.layout.kid_list, parent, false);
         return new ViewHolder(view);
     }
@@ -43,15 +42,7 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ViewHold
         final Article article = articles.get(position);
         System.out.println(article.getTitle()+" Adapter");
         holder.titleView.setText(article.getTitle());
-
-       /* view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), KidResultActivity.class);
-                //intent.putExtra(Article.class.getSimpleName(),article);
-                v.getContext().startActivity(intent);
-            }
-        });*/
+        holder.textView.setText(article.getContent());
     }
 
     @Override
@@ -60,10 +51,11 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ViewHold
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        final TextView titleView;
+        final TextView titleView, textView;
         ViewHolder(View view){
             super(view);
             titleView = (TextView) view.findViewById(R.id.kidTitle);
+            textView = (TextView) view.findViewById(R.id.kidText);
         }
     }
 }

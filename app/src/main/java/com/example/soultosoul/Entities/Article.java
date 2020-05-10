@@ -16,6 +16,10 @@ public class Article implements Serializable {
     @Expose
     private String title;
 
+    @SerializedName("shortContent")
+    @Expose
+    private String shortContent;
+
     @SerializedName("content")
     @Expose
     private String content;
@@ -32,17 +36,17 @@ public class Article implements Serializable {
     @Expose
     private long problem_id;
 
-    @SerializedName("user_id")
+    @SerializedName("user")
     @Expose
-    private long user_id;
+    private Users user;
 
-    public Article( String title,  String content,  long category_id,  long mood_id,  long problem_id,  long user_id) {
+    public Article( String title,  String content,  long category_id,  long mood_id,  long problem_id,  Users user_id) {
         this.title = title;
         this.content = content;
         this.category_id = category_id;
         this.mood_id = mood_id;
         this.problem_id = problem_id;
-        this.user_id = user_id;
+        this.user = user;
     }
 
     public long getId() {
@@ -93,11 +97,11 @@ public class Article implements Serializable {
         this.problem_id = problem_id;
     }
 
-    public long getUser_id() {
-        return this.user_id;
+    public Users getUser() {
+        return this.user;
     }
 
-    public void setUser_id( long user_id) {
-        this.user_id = user_id;
+    public void setUser( Users user) {
+        this.user = user;
     }
 }
