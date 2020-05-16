@@ -1,5 +1,7 @@
 package com.example.soultosoul.CudiQ.Fragments.MainFragments;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,17 +21,16 @@ public class CallFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_call, container, false);
     }
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        viewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
-        TextView textView = view.findViewById(R.id.callId);
-        textView.setOnClickListener(v -> {
-            viewModel.marfaString.setValue("KUKA");
-        });
+        //viewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
+
+//        TextView textView = view.findViewById(R.id.callId);
+//        textView.setOnClickListener(v -> {
+//            viewModel.marfaString.setValue("KUKA");
+//        });
     }
 }

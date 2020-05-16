@@ -24,16 +24,22 @@ public interface JSONPlaceHolderApi {
     Call<List<Article>> getAllArticles();
 
     @GET("api/v1/unauthorized/article/{id}")
-    Call<Article> getArticleWithID(@Path("id") int id);
+    Call<Article> getArticleWithID(@Path("id") long id);
 
     @GET("api/v1/unauthorized/blogs")
     Call<List<Blog>> getAllBlogs();
 
     @GET("api/v1/unauthorized/blog/{id}")
-    Call<Blog> getBlogWithID(@Path("id") int id);
+    Call<Blog> getBlogWithID(@Path("id") long id);
 
     //kids - 1, teenagers - 2, young people - 3, adults - 4
-    @GET("api/v1/unauthorized/articles/category/{categoryId}/mood/{moodId}/problem/{problemId}")
-    Call<List<Article>> getArticlesByCatMoodProb(@Path("categoryId") int categoryId, @Path("moodId") int moodId, @Path("problemId") int problemId);
+    @GET("api/v1/unauthorized/articles/category/{categoryId}/problem/{problemId}")
+    Call<List<Article>> getArticlesByCatProb(@Path("categoryId") long categoryId, @Path("problemId") long problemId);
+
+    @GET("api/v1/unauthorized/articles/category/{categoryId}")
+    Call<List<Article>> getArticlesByCat(@Path("categoryId") int categoryId);
+
+    @GET("api/v1/unauthorized/articles/category/1")
+    Call<List<Article>> getArticlesByKid();
 
 }

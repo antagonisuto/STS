@@ -16,6 +16,10 @@ public class Blog implements Serializable {
     @Expose
     private String title;
 
+    @SerializedName("shortContent")
+    @Expose
+    private String shortContent;
+
     @SerializedName("content")
     @Expose
     private String content;
@@ -62,6 +66,14 @@ public class Blog implements Serializable {
 
     public void setUser_id( long user_id) {
         this.user_id = user_id;
+    }
+
+    public String getShortContent() {
+        return shortContent;
+    }
+
+    public void setShortContent(String shortContent) {
+        this.shortContent = shortContent;
     }
 
     @Override

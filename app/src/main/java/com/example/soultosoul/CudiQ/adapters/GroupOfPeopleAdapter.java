@@ -19,6 +19,7 @@ import java.util.List;
  * Author: kuanyshsalyk
  * Created on 5/10/20
  */
+
 public class GroupOfPeopleAdapter extends RecyclerView.Adapter<GroupOfPeopleAdapter.ViewHolder> {
     private Context mContext;
     private List<String> mDataList;

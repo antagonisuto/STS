@@ -10,10 +10,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.soultosoul.CudiQ.adapters.RecBlogAdapter;
 import com.example.soultosoul.CudiQ.viewmodels.MainViewModel;
+import com.example.soultosoul.MarfaQ.Entities.Blog;
 import com.example.soultosoul.R;
+
+import java.util.List;
 
 public class MessageFragment extends Fragment {
     private MainViewModel viewModel;
@@ -25,6 +31,7 @@ public class MessageFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_message, container, false);
     }
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {

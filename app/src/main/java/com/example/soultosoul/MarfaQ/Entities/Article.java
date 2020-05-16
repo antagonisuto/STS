@@ -49,6 +49,12 @@ public class Article implements Serializable {
         this.user = user;
     }
 
+    public Article(long id, String title, String content) {
+        this.id = id;
+        this.title = title;
+        this.content = content;
+    }
+
     public long getId() {
         return this.id;
     }
@@ -103,5 +109,13 @@ public class Article implements Serializable {
 
     public void setUser( Users user) {
         this.user = user;
+    }
+
+    public String getShortContent() {
+        return shortContent;
+    }
+
+    public void setShortContent(String shortContent) {
+        this.shortContent = shortContent;
     }
 }

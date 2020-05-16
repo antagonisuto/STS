@@ -38,7 +38,7 @@
             android:layout_marginLeft="106dp"
             android:layout_marginTop="24dp"
             android:gravity="top"
-            android:text="@string/mood"
+            android:text="@string/reason"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -50,75 +50,60 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp">
 
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-            //1 angry
-            //2 ne znau
 
             <ImageButton
-                android:id="@+id/mood_angry"
+                android:id="@+id/reason_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="70dp"
+                android:background="@drawable/reason_home_selector" />
+
+            <ImageButton
+                android:id="@+id/reason_school"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="70dp"
+                android:background="@drawable/reason_school_selector" />
+
+            <ImageButton
+                android:id="@+id/reason_internet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="70dp"
+                android:background="@drawable/reason_internet_selector" />
+
+            <ImageButton
+                android:id="@+id/reason_friend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="70dp"
+                android:background="@drawable/reason_friend_selector" />
+
+            <ImageButton
+                android:id="@+id/reason_self"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="70dp"
                 android:layout_marginLeft="16dp"
-                android:background="@drawable/mood_angry_selector"
-                android:innerRadius="0dp" />
-
-            <ImageButton
-                android:id="@+id/mood_curios"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="55dp"
-                android:layout_marginLeft="16dp"
-                android:background="@drawable/mood_curios_selector"
-                android:innerRadius="0dp"/>
-
-            <ImageButton
-                android:id="@+id/mood_shame"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="55dp"
-                android:layout_marginLeft="16dp"
-                android:background="@drawable/mood_shame_selector"
-                android:innerRadius="0dp"/>
-
-            <ImageButton
-                android:id="@+id/mood_not_sure"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="55dp"
-                android:layout_marginLeft="16dp"
-                android:background="@drawable/mood_notsure_selector"
-                android:innerRadius="0dp"/>
-
-            <ImageButton
-                android:id="@+id/mood_sad"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="55dp"
-                android:layout_marginLeft="16dp"
-                android:background="@drawable/mood_sad_selector"
-                android:innerRadius="0dp"/>
-
-
+                android:background="@drawable/reason_self_selector"
+                android:layout_marginEnd="45dp"/>
         </LinearLayout>
     </HorizontalScrollView>
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:gravity="center">
 
         <Button
-            android:id="@+id/btn_to_reason"
+            android:id="@+id/moodReasonKid"
             android:layout_width="190dp"
             android:layout_height="50dp"
             android:background="@drawable/button_style"
