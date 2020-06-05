@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.soultosoul.MarfaQ.Entities.Article;
 import com.example.soultosoul.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -55,17 +57,28 @@ public class RecReadKidAdapter extends RecyclerView.Adapter<RecReadKidAdapter.Vi
         TextView textView;
         TextView mainTextView;
         View readKidButton;
+        ImageView readKidImage;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             textView = itemView.findViewById(R.id.readKidTitle);
             mainTextView = itemView.findViewById(R.id.readKidText);
             readKidButton = itemView.findViewById(R.id.readKidButton);
+            readKidImage = itemView.findViewById(R.id.readKidImage);
         }
 
         public void bindItem(Article article) {
             textView.setText(article.getTitle());
             mainTextView.setText(article.getContent());
+            System.out.println(article.getContent());
+            String url = article.getImageArticle().getUrl();
+            if (url != null) {
+                Picasso.get()
+                        .load(url)
+                        .resize(0, 200)
+                        .into(readKidImage);
+            }
+
             //System.out.println(article.getContent()+" adapter");
 
         }
@@ -73,8 +86,16 @@ public class RecReadKidAdapter extends RecyclerView.Adapter<RecReadKidAdapter.Vi
         public void bindItemAndButton(Article article) {
             textView.setText(article.getTitle());
             mainTextView.setText(article.getContent());
-            readKidButton.setVisibility(View.VISIBLE);
-            //System.out.println(article.getContent()+" adapter");
+            String url = article.getImageArticle().getUrl();
+            //System.out.println("REcArticleAdapter" + url);
+            if (url != null) {
+                Picasso.get()
+                        .load(url)
+                        .resize(0, 200)
+                        .into(readKidImage);
+            }
+            //readKidButton.setVisibility(View.VISIBLE);
+            System.out.println(article.getContent()+" adapter");
 
         }
     }

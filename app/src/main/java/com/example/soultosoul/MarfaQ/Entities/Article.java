@@ -4,6 +4,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
+import java.util.List;
 
 //Sts_article(id, title, content, category_id, mood_id, problem_id, user_id)
 public class Article implements Serializable {
@@ -40,6 +41,14 @@ public class Article implements Serializable {
     @Expose
     private Users user;
 
+    @SerializedName("image")
+    @Expose
+    private ImageArticle imageArticle;
+
+    @SerializedName("images")
+    @Expose
+    private List<ImageArticle> imagesArticle;
+
     public Article( String title,  String content,  long category_id,  long mood_id,  long problem_id,  Users user_id) {
         this.title = title;
         this.content = content;
@@ -49,10 +58,18 @@ public class Article implements Serializable {
         this.user = user;
     }
 
+
     public Article(long id, String title, String content) {
         this.id = id;
         this.title = title;
         this.content = content;
+    }
+
+    public Article(long id, String title, String shortContent, ImageArticle imageArticle) {
+        this.id = id;
+        this.title = title;
+        this.content = shortContent;
+        this.imageArticle = imageArticle;
     }
 
     public long getId() {
@@ -117,5 +134,25 @@ public class Article implements Serializable {
 
     public void setShortContent(String shortContent) {
         this.shortContent = shortContent;
+    }
+
+    public ImageArticle getImageArticle() {
+        return imageArticle;
+    }
+
+    public String getImageArticleUrl() {
+        return imageArticle.getUrl();
+    }
+
+    public void setImageArticle(ImageArticle imageArticle) {
+        this.imageArticle = imageArticle;
+    }
+
+    public List<ImageArticle> getImagesArticle() {
+        return imagesArticle;
+    }
+
+    public void setImagesArticle(List<ImageArticle> imagesArticle) {
+        this.imagesArticle = imagesArticle;
     }
 }

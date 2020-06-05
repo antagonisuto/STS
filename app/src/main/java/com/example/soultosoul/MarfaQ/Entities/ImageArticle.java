@@ -3,7 +3,9 @@ package com.example.soultosoul.MarfaQ.Entities;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class ImageArticle {
+import java.io.Serializable;
+
+public class ImageArticle implements Serializable {
 
     //Sts_image_article(id, url, article_id)
 
@@ -15,7 +17,6 @@ public class ImageArticle {
     @Expose
     private String url;
 
-    @SerializedName("article_id")
     @Expose
     private long article_id;
 

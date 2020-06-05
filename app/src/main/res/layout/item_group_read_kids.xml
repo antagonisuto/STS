@@ -26,22 +26,21 @@
             <ImageView
                 android:id="@+id/readKidImage"
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
+                android:layout_height="200dp"
                 android:layout_below="@+id/readKidTitle"
                 android:layout_marginTop="16dp"
-                android:background="@drawable/title"/>
+                />
 
             <TextView
                 android:id="@+id/readKidText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/content"
-                android:textSize="18sp"
-                android:textColor="@color/colorPrimary"
-                android:textAlignment="center"
                 android:layout_below="@+id/readKidImage"
                 android:layout_marginTop="16dp"
-                />
+                android:text="@string/content"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp" />
 
             <LinearLayout
                 android:id="@+id/readKidButton"

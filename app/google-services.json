@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "642883875615",
+    "firebase_url": "https://soultosoul-fd7eb.firebaseio.com",
+    "project_id": "soultosoul-fd7eb",
+    "storage_bucket": "soultosoul-fd7eb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:642883875615:android:af2d3ee10148a7b3bbb62a",
+        "android_client_info": {
+          "package_name": "com.example.soultosoul"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "642883875615-a0argkvtua9ekem09fvp00q65qp02k84.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.soultosoul",
+            "certificate_hash": "6590aafcb54d12a3f418e4852768ad2d68c28c34"
+          }
+        },
+        {
+          "client_id": "642883875615-13vd5d3tjpur24nffa4o1i1e5ihf0a8l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJ2SRXLmyxFs07ix3E-B8wJQVP9iycwYA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "642883875615-13vd5d3tjpur24nffa4o1i1e5ihf0a8l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

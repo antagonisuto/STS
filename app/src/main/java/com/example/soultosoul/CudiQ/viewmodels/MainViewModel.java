@@ -17,12 +17,17 @@ public class MainViewModel extends ViewModel {
     public MutableLiveData<String> marfaString = new MutableLiveData<>();
     public MutableLiveData<Integer> reason = new MutableLiveData<>();
     public MutableLiveData<Integer> category = new MutableLiveData<>();
+    public MutableLiveData<Integer> adultReason = new MutableLiveData<>();
 
     public MutableLiveData<Integer> getReason() {
         return reason;
     }
     public MutableLiveData<Integer> getCategory() {
         return category;
+    }
+
+    public MutableLiveData<Integer> getAdultReason() {
+        return adultReason;
     }
 
     public MainViewModel() {
@@ -59,6 +64,5 @@ public class MainViewModel extends ViewModel {
     public MutableLiveData<List<Article>> getArticleKid(){
         return repository.getArticleKid();
     }
-
 
 }

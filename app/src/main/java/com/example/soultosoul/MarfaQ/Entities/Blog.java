@@ -28,12 +28,24 @@ public class Blog implements Serializable {
     @Expose
     private long user_id;
 
+    @SerializedName("image")
+    @Expose
+    private ImageArticle imageArticle;
+
 
     public Blog(String title,  String content, long user_id) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.user_id = user_id;
+    }
+
+    public ImageArticle getImageArticle() {
+        return imageArticle;
+    }
+
+    public void setImageArticle(ImageArticle imageArticle) {
+        this.imageArticle = imageArticle;
     }
 
     public long getId() {

@@ -13,7 +13,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -48,6 +47,7 @@ public class MainPageFragment extends Fragment implements GroupOfPeopleAdapter.C
     private GroupOfPeopleAdapter adapterForKids;
     private List<String> arrDataAboutGroup = new ArrayList<>();
     private MainViewModel viewModel;
+    private List<TypeClass> typeClasses = new ArrayList<>();
     //private RecyclerView recyclerView;
     private RecBlogAdapter recBlogAdapter;
     //private MutableLiveData<List<Blog>> arrDataStories = new MutableLiveData<>();
@@ -95,15 +95,18 @@ public class MainPageFragment extends Fragment implements GroupOfPeopleAdapter.C
 
     private void initData() {
         //todo в будущем можешь брать данные с бэкенда
-        arrDataAboutGroup.add("Дети: 3 - 10 лет");
-        arrDataAboutGroup.add("Подростки: 11 - 17 лет");
-        arrDataAboutGroup.add("Молодые люди: 18 - 29 лет");
-        arrDataAboutGroup.add("Взрослые: 30+ лет");
-        arrDataAboutGroup.add("ВЕТЕРАНЫ");
+        typeClasses.add(new TypeClass("Дети: 3 - 10 лет", R.drawable.kids));
+        typeClasses.add(new TypeClass("Подростки: 11 - 17 лет", R.drawable.teen));
+        typeClasses.add(new TypeClass("Молодые люди: 18 - 29 лет", R.drawable.people));
+        typeClasses.add(new TypeClass("Взрослые: 30+ лет",R.drawable.adult));
+        //arrDataAboutGroup.add("Дети: 3 - 10 лет");
+        //arrDataAboutGroup.add("Подростки: 11 - 17 лет");
+//        arrDataAboutGroup.add("Молодые люди: 18 - 29 лет");
+//        arrDataAboutGroup.add("Взрослые: 30+ лет");
     }
 
     private void initAdapters() {
-        adapterForKids = new GroupOfPeopleAdapter(getContext(), arrDataAboutGroup, this);
+        adapterForKids = new GroupOfPeopleAdapter(getContext(), typeClasses, this);
     }
 
     private void initViews() {
@@ -112,9 +115,9 @@ public class MainPageFragment extends Fragment implements GroupOfPeopleAdapter.C
     }
 
     @Override
-    public void onClickGroupPeople(int position, String textOfList) {
+    public void onClickGroupPeople(int position, TypeClass textOfList) {
         //todo here you can move to other fragment it is sample
-        Toast.makeText(getContext(), textOfList, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), textOfList.getName(), Toast.LENGTH_SHORT).show();
         if(position==0) {
             MoodFragment moodFragment = new MoodFragment();
             replaceFragment(moodFragment);
@@ -141,5 +144,31 @@ public class MainPageFragment extends Fragment implements GroupOfPeopleAdapter.C
         OtherFragment otherFragment = new OtherFragment();
         otherFragment.setArguments(bundle);
         replaceFragment(otherFragment);
+    }
+
+    public class TypeClass {
+        private String name;
+        private int image;
+
+        public TypeClass(String name, int image) {
+            this.name = name;
+            this.image = image;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public int getImage() {
+            return image;
+        }
+
+        public void setImage(int image) {
+            this.image = image;
+        }
     }
 }

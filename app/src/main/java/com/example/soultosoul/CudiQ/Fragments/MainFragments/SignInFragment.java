@@ -1,6 +1,5 @@
 package com.example.soultosoul.CudiQ.Fragments.MainFragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,12 +13,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.ViewModelProvider;
 
-import com.example.soultosoul.CudiQ.Auth.EmailPasswordActivity;
-import com.example.soultosoul.CudiQ.Fragments.OtherFragments.MoodFragment;
 import com.example.soultosoul.CudiQ.Fragments.OtherFragments.UserInfoFragment;
-import com.example.soultosoul.CudiQ.viewmodels.MainViewModel;
 import com.example.soultosoul.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -27,20 +22,17 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import org.w3c.dom.Text;
-
-public class ProfileFragment extends Fragment {
-    private MainViewModel viewModel;
+public class SignInFragment extends Fragment {
     private EditText email, password;
-    private Button btn_signUp,btn_signIn;
-    private TextView status;
+    private Button btnSignIn, btnSignUp;
+    private TextView statusIn;
     private FirebaseAuth mAuth;
 
+
+    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.activity_sign_up, container, false);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.activity_sign_in, container, false);
         mAuth = FirebaseAuth.getInstance();
         return view;
     }
@@ -53,59 +45,41 @@ public class ProfileFragment extends Fragment {
             UserInfoFragment userInfoFragment = new UserInfoFragment();
             replaceFragment(userInfoFragment);
         }
-
-        email = (EditText) view.findViewById(R.id.fieldEmailUp);
-        password = (EditText) view.findViewById(R.id.fieldPasswordUp);
-
-        status = (TextView) view.findViewById(R.id.statusUp);
-        btn_signIn = (Button) view.findViewById(R.id.signInButton);
-        btn_signIn.setOnClickListener(new View.OnClickListener(){
+        email = (EditText) view.findViewById(R.id.fieldEmail);
+        password = (EditText) view.findViewById(R.id.fieldPassword);
+        btnSignIn = (Button) view.findViewById(R.id.emailSignInButton);
+        statusIn = (TextView) view.findViewById(R.id.statusIn);
+        btnSignIn.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
-                SignInFragment signInFragment = new SignInFragment();
-                replaceFragment(signInFragment);
-
-            }
-        });
-        btn_signUp = (Button) view.findViewById(R.id.emailSignUpButton);
-        btn_signUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // if (!repassword.getText().toString().equals(password.getText().toString())){
-                //  Toast.makeText(getActivity(), "Password and confirm password not same. Please try again.", Toast.LENGTH_SHORT).show();
-                //  return;
-
                 String emailID = email.getText().toString();
-                String paswd = password.getText().toString();
+                String passwrd = password.getText().toString();
                 if (emailID.isEmpty()) {
                     email.setError("Provide your Email first!");
                     email.requestFocus();
-                } else if (paswd.isEmpty()) {
+                } else if (passwrd.isEmpty()) {
                     password.setError("Set your password");
                     password.requestFocus();
-                }
-                else if (emailID.isEmpty() && paswd.isEmpty()) {
+                }else if (emailID.isEmpty() && passwrd.isEmpty()) {
                     //Toast.makeText(getActivity(), "Fields Empty!", Toast.LENGTH_SHORT).show();
                     System.out.println("Auth Error 1");
-                } else if (!(emailID.isEmpty() && paswd.isEmpty())) {
-
-                    mAuth.createUserWithEmailAndPassword(emailID, paswd).addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
+                } else if (!(emailID.isEmpty() && passwrd.isEmpty())) {
+                    mAuth.signInWithEmailAndPassword(emailID,passwrd).addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                System.out.println("Succes Auth");
+                            if(task.isSuccessful()){
+                                System.out.println("Success In");
                                 UserInfoFragment userInfoFragment = new UserInfoFragment();
                                 replaceFragment(userInfoFragment);
                             } else {
-                               System.out.println("Auth error");
-                               status.setText("Вы уже зарегистрированы");
-                               status.setVisibility(View.VISIBLE);
+                                System.out.println("In Error 2");
                             }
                         }
                     });
-                }}});
-
+                }
+            }
+        });
     }
 
     private void replaceFragment(Fragment fragment) {

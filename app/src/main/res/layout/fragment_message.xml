@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/messageFragment"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -9,19 +10,46 @@
     android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        app:fabSize="mini"
+        android:src="@drawable/ic_send"
+        />
 
-    <LinearLayout
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toLeftOf="@+id/btnSend"
+        >
+
+        <EditText
+            android:id="@+id/fieldMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/greyColor"
+            android:hint="Напишите сообщение"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_above="@id/textLayout"
+        android:id="@+id/listOfMessages"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="16dp"
+        android:layout_marginBottom="16dp"
+        />
 
-        <TextView
-            android:id="@+id/someMessage"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Message"
-            android:textColor="@color/blackColor" />
-
-    </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>

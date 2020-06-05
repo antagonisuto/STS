@@ -49,19 +49,43 @@
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-                <ImageView
+                <ImageButton
+                    android:id="@+id/adultHome"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
-                    android:background="@drawable/home" />
+                    android:background="@drawable/adult_home_selector" />
 
-                <ImageView
+                <ImageButton
+                    android:id="@+id/adultSchool"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-                    android:background="@drawable/home" />
+                    android:background="@drawable/adult_school_selector" />
+
+                <ImageButton
+                    android:id="@+id/adultInternet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/adult_internet_selector" />
+
+                <ImageButton
+                    android:id="@+id/adultFriend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/adult_friend_selector" />
+
+                <ImageButton
+                    android:id="@+id/adultSelf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/adult_self_selector" />
             </LinearLayout>
         </HorizontalScrollView>
 
