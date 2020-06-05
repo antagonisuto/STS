@@ -1,9 +1,11 @@
 package com.example.soultosoul.CudiQ.adapters;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.soultosoul.MarfaQ.Entities.Article;
 import com.example.soultosoul.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -54,17 +57,31 @@ public class RecArticleAdapter extends RecyclerView.Adapter<RecArticleAdapter.Vi
         TextView textView;
         TextView mainTextView;
         View recyclerView;
+        ImageView imageView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             textView = itemView.findViewById(R.id.articleTitle);
             mainTextView = itemView.findViewById(R.id.articleText);
             recyclerView = itemView.findViewById(R.id.articleCard);
+            imageView = itemView.findViewById(R.id.articleImage);
         }
 
         public void bindItem(Article article) {
             textView.setText(article.getTitle());
-            mainTextView.setText(article.getShortContent());
+            String temp = article.getShortContent();
+            if(temp.contains("<p>")){
+                temp.replace("<p>","");
+            }
+            mainTextView.setText(temp+"...");
+            String url = article.getImageArticle().getUrl();
+            //System.out.println("REcArticleAdapter" + url);
+            if (url != null) {
+                Picasso.get()
+                        .load(url)
+                        .resize(0, 185)
+                        .into(imageView);
+            }
 
         }
     }

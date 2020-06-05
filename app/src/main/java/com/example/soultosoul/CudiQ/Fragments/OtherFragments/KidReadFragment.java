@@ -69,10 +69,13 @@ public class KidReadFragment extends Fragment implements RecReadKidAdapter.Click
             }
         }
 
+        int k=0;
         for (int i=0; i<lst.size()-1; i++){
-            articles_temp.add(new Article(tempArr.getId(),lst.get(i),lst.get(i+1)));
+            articles_temp.add(new Article(tempArr.getId(),lst.get(i),lst.get(i+1),tempArr.getImagesArticle().get(k)));
+            //articles_temp.add(new Article(lst.get(i),lst.get(i+1),tempArr.getImagesArticle().get(k)));
             recReadKidAdapter = new RecReadKidAdapter(getContext(), articles_temp);
             recyclerView.setAdapter(recReadKidAdapter);
+            k++;
             i++;
         }
 

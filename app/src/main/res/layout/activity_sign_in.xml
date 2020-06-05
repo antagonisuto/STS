@@ -36,24 +36,39 @@
             />
 
         <EditText
+            android:id="@+id/fieldEmail"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="E-mail"
+            android:text="invisible.kichi@gmail.com"
+            android:textColor="@color/blackColor"
             android:layout_marginBottom="10dp"
             android:paddingLeft="20dp"
             android:background="@drawable/tag_style_grey"
             />
 
         <EditText
+            android:id="@+id/fieldPassword"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:text="pandataomad"
             android:hint="Пароль"
             android:paddingLeft="20dp"
+            android:textColor="@color/blackColor"
             android:background="@drawable/tag_style_grey"
             android:layout_marginBottom="16dp"
             />
 
         <TextView
+            android:id="@+id/statusIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:textColor="#cc3300"
+            />
+
+        <Button
+            android:id="@+id/emailSignInButton"
             android:padding="13dp"
             android:background="@drawable/button_style"
             android:layout_width="match_parent"
@@ -61,6 +76,7 @@
             android:text="Войти"
             android:textColor="@color/whiteColor"
             android:textStyle="bold"
+            android:textAllCaps="false"
             android:gravity="center"
             android:textSize="20sp"
             android:layout_marginBottom="16dp"
@@ -107,7 +123,8 @@
 
         </RelativeLayout>
 
-        <TextView
+        <Button
+            android:id="@+id/emailCreateAccountButton"
             android:layout_gravity="center"
             android:layout_marginTop="100dp"
             android:layout_marginBottom="20dp"

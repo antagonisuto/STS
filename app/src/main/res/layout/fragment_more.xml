@@ -1,44 +1,51 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="8dp"
-    android:layout_marginBottom="8dp"
+    android:background="@color/link_waterMarfa"
+    android:layout_marginBottom="16dp"
+    android:id="@+id/nextPageList"
     android:orientation="vertical">
 
-    <RelativeLayout
-        android:id="@+id/nextPageList"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    <TextView
-        android:id="@+id/titleList"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="В связи болезнью"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="@color/colorPrimary"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titleList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="В связи болезнью"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Все больше выходят новости о китайском коронавирусе ..."
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp" />
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/newsListImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/news" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="2dp"
+        android:background="#ffffff"
+        android:paddingBottom="1dp"
         />
 
-    <TextView
-        android:id="@+id/textList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/titleList"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="10dp"
-        android:layout_toStartOf="@+id/newsList"
-        android:text="Все больше выходят новости о китайском коронавирусе ..."
-        android:textColor="@color/colorPrimary"
-        android:textSize="16sp" />
-
-    <ImageView
-        android:id="@+id/newsList"
-        android:layout_width="74dp"
-        android:layout_height="74dp"
-        android:layout_alignParentEnd="true"
-        android:background="@drawable/news" />
-    </RelativeLayout>
 </LinearLayout>

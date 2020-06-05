@@ -6,6 +6,10 @@ import com.example.soultosoul.MarfaQ.Entities.Article;
 import com.example.soultosoul.MarfaQ.Entities.Blog;
 import com.example.soultosoul.MarfaQ.Network.NetworkService;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.List;
 
 import retrofit2.Call;
@@ -82,6 +86,7 @@ public class MainRepository {
 
 
     public MutableLiveData<List<Article>> getArticleByCatProb(long catId, long probId){
+        if(probId!=10){
         service.getJSONApi().getArticlesByCatProb(catId, probId).enqueue(new Callback<List<Article>>() {
             @Override
             public void onResponse(Call<List<Article>> call, Response<List<Article>> response) {
@@ -97,6 +102,9 @@ public class MainRepository {
 
             }
         });
+        } else {
+            allArticleByCatProb = getArticleByCat((int)catId);
+        }
         return allArticleByCatProb;
     }
 
@@ -137,4 +145,38 @@ public class MainRepository {
         });
         return allArticleByCat;
     }
+
+
+    public MutableLiveData<List<Article>> getAllArticleWithImages() {
+        service.getJSONApi().getAllArticles().enqueue(new Callback<List<Article>>() {
+
+            @Override
+            public void onResponse(Call<List<Article>> call, Response<List<Article>> response) {
+                if (response.isSuccessful()){
+
+                    JSONObject obj = null;
+                    try {
+                        obj = new JSONObject(String.valueOf(response));
+                        String imageUrl = obj.getJSONObject("image").getString("url");
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    List<Article> articles = response.body();
+                    allArticle.setValue(articles);
+
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Article>> call, Throwable t) {
+                t.printStackTrace();
+            }
+        });
+        return allArticle;
+    }
+
+
+
 }
